@@ -9,7 +9,8 @@ ext_modules_cprox = [
         Extension("nosmo.cprox.sorted_L1_prox", sources=["nosmo/cprox/sorted_L1_prox.pyx"]),
         Extension("nosmo.cprox.psd_proj", sources=["nosmo/cprox/psd_proj.pyx"]),
         Extension("nosmo.cprox.pquad_proj", sources=["nosmo/cprox/pquad_proj.pyx"]),
-        Extension("nosmo.cprox.psd_proj_jacob", sources=["nosmo/cprox/psd_proj_jacob.pyx"])
+        Extension("nosmo.cprox.psd_proj_jacob", sources=["nosmo/cprox/psd_proj_jacob.pyx"]),
+        Extension("nosmo.cprox.prox_wrapper", sources=["nosmo/cprox/prox_wrapper.pyx"])
         ]
 
 ext_modules_cblas = [
