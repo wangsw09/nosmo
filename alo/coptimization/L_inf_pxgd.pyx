@@ -4,7 +4,7 @@ from scipy.sparse.linalg import svds
 cimport cython
 
 from ..clinalg.cython_blas_wrapper cimport st_dgemv, sn_dgemv, s_daxpy, mat_T_mat, s_dcopy, s_dnrm2
-from ..cfuncs.l_inf_prox cimport L_inf_prox
+from ..cprox.l_inf_prox cimport L_inf_prox
 
 @cython.boundscheck(False)
 @cython.wraparound(False)

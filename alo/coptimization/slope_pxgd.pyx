@@ -5,7 +5,7 @@ from scipy.sparse.linalg import svds
 cimport cython
 
 from ..clinalg.cython_blas_wrapper cimport st_dgemv, sn_dgemv, s_daxpy, s_dcopy, s_dnrm2, s_dscal
-from ..cfuncs.sorted_L1_prox cimport sorted_L1_prox
+from ..cprox.sorted_L1_prox cimport sorted_L1_prox
 
 @cython.boundscheck(False)
 @cython.wraparound(False)

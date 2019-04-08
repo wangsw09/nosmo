@@ -6,7 +6,7 @@ cimport cython
 
 from ..clinalg.cython_blas_wrapper cimport st_dgemv, sn_dgemv, s_daxpy, mat_T_mat, s_dcopy, s_dnrm2, s_daxpy0, sn_dsyrk
 from ..clinalg.cython_lapack_wrapper cimport su_dposv
-from ..cfuncs.L1_proj cimport L1_proj
+from ..cprox.L1_proj cimport L1_proj
 
 @cython.boundscheck(False)
 @cython.wraparound(False)

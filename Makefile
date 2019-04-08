@@ -10,4 +10,4 @@ compile:
 post_clean:
 	rm -rf build
 
-all: clean compile post_clean
+all: compile 
