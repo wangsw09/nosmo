@@ -3,35 +3,35 @@ from distutils.extension import Extension
 from Cython.Distutils import build_ext
 
 ext_modules_cprox = [
-        Extension("alo.cprox.l_inf_prox", libraries=["m"], sources=["alo/cprox/l_inf_prox.pyx"]),
-        Extension("alo.cprox.grouped_L1_prox", sources=["alo/cprox/grouped_L1_prox.pyx"]),
-        Extension("alo.cprox.L1_proj", libraries=["m"], sources=["alo/cprox/L1_proj.pyx"]),
-        Extension("alo.cprox.sorted_L1_prox", sources=["alo/cprox/sorted_L1_prox.pyx"]),
-        Extension("alo.cprox.psd_proj", sources=["alo/cprox/psd_proj.pyx"]),
-        Extension("alo.cprox.pquad_proj", sources=["alo/cprox/pquad_proj.pyx"]),
-        Extension("alo.cprox.psd_proj_jacob", sources=["alo/cprox/psd_proj_jacob.pyx"])
+        Extension("nosmo.cprox.l_inf_prox", libraries=["m"], sources=["nosmo/cprox/l_inf_prox.pyx"]),
+        Extension("nosmo.cprox.grouped_L1_prox", sources=["nosmo/cprox/grouped_L1_prox.pyx"]),
+        Extension("nosmo.cprox.L1_proj", libraries=["m"], sources=["nosmo/cprox/L1_proj.pyx"]),
+        Extension("nosmo.cprox.sorted_L1_prox", sources=["nosmo/cprox/sorted_L1_prox.pyx"]),
+        Extension("nosmo.cprox.psd_proj", sources=["nosmo/cprox/psd_proj.pyx"]),
+        Extension("nosmo.cprox.pquad_proj", sources=["nosmo/cprox/pquad_proj.pyx"]),
+        Extension("nosmo.cprox.psd_proj_jacob", sources=["nosmo/cprox/psd_proj_jacob.pyx"])
         ]
 
 ext_modules_cblas = [
-        Extension("alo.clinalg.cython_blas_wrapper", sources=["alo/clinalg/cython_blas_wrapper.pyx"]),
-        Extension("alo.clinalg.cython_lapack_wrapper", sources=["alo/clinalg/cython_lapack_wrapper.pyx"])
+        Extension("nosmo.clinalg.cython_blas_wrapper", sources=["nosmo/clinalg/cython_blas_wrapper.pyx"]),
+        Extension("nosmo.clinalg.cython_lapack_wrapper", sources=["nosmo/clinalg/cython_lapack_wrapper.pyx"])
         ]
 
 ext_modules_coptimization = [
-        Extension("alo.coptimization.lasso_cd", sources=["alo/coptimization/lasso_cd.pyx"]),
-        Extension("alo.coptimization.ridge_cd", sources=["alo/coptimization/ridge_cd.pyx"]),
-        Extension("alo.coptimization.L_inf_pxgd", sources=["alo/coptimization/L_inf_pxgd.pyx"]),
-        Extension("alo.coptimization.L_inf_arpxgd", sources=["alo/coptimization/L_inf_arpxgd.pyx"]),
-        Extension("alo.coptimization.L_inf_admm", sources=["alo/coptimization/L_inf_admm.pyx"]),
-        Extension("alo.coptimization.group_lasso_pxgd", sources=["alo/coptimization/group_lasso_pxgd.pyx"]),
-        Extension("alo.coptimization.slope_pxgd", sources=["alo/coptimization/slope_pxgd.pyx"]),
-        Extension("alo.coptimization.slope_arpxgd", sources=["alo/coptimization/slope_arpxgd.pyx"]),
-        Extension("alo.coptimization.posv_ridge_pjgd", sources=["alo/coptimization/posv_ridge_pjgd.pyx"]),
-        Extension("alo.coptimization.psd_matrix_ridge_pjgd", sources=["alo/coptimization/psd_matrix_ridge_pjgd.pyx"])
+        Extension("nosmo.coptimization.lasso_cd", sources=["nosmo/coptimization/lasso_cd.pyx"]),
+        Extension("nosmo.coptimization.ridge_cd", sources=["nosmo/coptimization/ridge_cd.pyx"]),
+        Extension("nosmo.coptimization.L_inf_pxgd", sources=["nosmo/coptimization/L_inf_pxgd.pyx"]),
+        Extension("nosmo.coptimization.L_inf_arpxgd", sources=["nosmo/coptimization/L_inf_arpxgd.pyx"]),
+        Extension("nosmo.coptimization.L_inf_admm", sources=["nosmo/coptimization/L_inf_admm.pyx"]),
+        Extension("nosmo.coptimization.group_lasso_pxgd", sources=["nosmo/coptimization/group_lasso_pxgd.pyx"]),
+        Extension("nosmo.coptimization.slope_pxgd", sources=["nosmo/coptimization/slope_pxgd.pyx"]),
+        Extension("nosmo.coptimization.slope_arpxgd", sources=["nosmo/coptimization/slope_arpxgd.pyx"]),
+        Extension("nosmo.coptimization.posv_ridge_pjgd", sources=["nosmo/coptimization/posv_ridge_pjgd.pyx"]),
+        Extension("nosmo.coptimization.psd_matrix_ridge_pjgd", sources=["nosmo/coptimization/psd_matrix_ridge_pjgd.pyx"])
         ]
 
 ext_modules_cCV = [
-        Extension("alo.cross_validate.loocv", sources=["alo/cross_validate/loocv.pyx"])
+        Extension("nosmo.cross_validate.loocv", sources=["nosmo/cross_validate/loocv.pyx"])
         ]
 
 setup(
