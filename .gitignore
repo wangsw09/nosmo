@@ -4,11 +4,6 @@
 *.[oa]
 *.ipynb
 stats_*
-!test_datagen.ipynb
 *.pdf
-I2000.txt
-2017_cleaned_votes.csv
-data/
-south_afraica_disease.csv
 *.c
 *.so
