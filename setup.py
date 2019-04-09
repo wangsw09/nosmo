@@ -2,6 +2,10 @@ from distutils.core import setup
 from distutils.extension import Extension
 from Cython.Distutils import build_ext
 
+ext_modules_cbase = [
+        Extension("nosmo.cbase.gaussian", libraries=["m"], sources=["nosmo/cbase/gaussian.pyx"])
+        ]
+
 ext_modules_cprox = [
         Extension("nosmo.cprox.l_inf_prox", libraries=["m"], sources=["nosmo/cprox/l_inf_prox.pyx"]),
         Extension("nosmo.cprox.grouped_L1_prox", sources=["nosmo/cprox/grouped_L1_prox.pyx"]),
@@ -39,6 +43,7 @@ setup(
         name = "cAccelerate",
         cmdclass = {"build_ext" : build_ext},
         ext_modules = (
+            ext_modules_cbase +
             ext_modules_cprox +
             ext_modules_cblas +
             ext_modules_coptimization +
