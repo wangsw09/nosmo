@@ -2,6 +2,8 @@ from .L_inf_pxgd import *
 from .L_inf_arpxgd import *
 from .L_inf_admm import *
 from .group_lasso_pxgd import *
+from .lasso_cd import *
+from .ridge_cd import *
 from .slope_pxgd import *
 from .slope_arpxgd import *
 from .posv_ridge_pjgd import *
