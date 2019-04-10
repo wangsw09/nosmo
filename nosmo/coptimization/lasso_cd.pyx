@@ -76,7 +76,7 @@ def lasso_cd(
     st_dgemv(n, p, 1, &X[0, 0], &y[0], 0, &XTy[0])
     XTy *= X_norm2_inv
 
-    return _classo_cd(XTX, XTy, X_norm2_inv, np.zeros(p, dtype=np.float64), lam, q, abs_tol, iter_max)
+    return _classo_cd(XTX, XTy, X_norm2_inv, np.zeros(p, dtype=np.float64), lam, abs_tol, iter_max)
 
 
 @cython.boundscheck(False)
