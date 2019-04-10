@@ -11,7 +11,7 @@ cdef np.ndarray[dtype=np.float64_t, ndim=1] _classo_cd(
         np.ndarray[dtype=np.float64_t, ndim=1] XTy, # XTy[i] = <Xi, y> / <Xi, Xi>
         np.ndarray[dtype=np.float64_t, ndim=1] X_norm2_inv,
         np.ndarray[dtype=np.float64_t, ndim=1] beta_init,
-        double lam, double q, double abs_tol, int iter_max):
+        double lam, double abs_tol, int iter_max):
 
     cdef int p = XTX.shape[0]
     cdef int iter_count = 0
@@ -57,7 +57,7 @@ cdef np.ndarray[dtype=np.float64_t, ndim=1] _classo_cd(
 def lasso_cd(
         np.ndarray[dtype=np.float64_t, ndim=2] X, # XTX[i, j] = <Xi, Xj> / <Xi, Xi>
         np.ndarray[dtype=np.float64_t, ndim=1] y, # XTy[i] = <Xi, y> / <Xi, Xi>
-        double lam, double q, double abs_tol, int iter_max):
+        double lam, double abs_tol, int iter_max):
 
     cdef int n = X.shape[0]
     cdef int p = X.shape[1]
@@ -84,7 +84,7 @@ def lasso_cd(
 def lasso_vec_cd(
         np.ndarray[dtype=np.float64_t, ndim=2] X, # XTX[i, j] = <Xi, Xj> / <Xi, Xi>
         np.ndarray[dtype=np.float64_t, ndim=1] y, # XTy[i] = <Xi, y> / <Xi, Xi>
-        np.ndarray[dtype=np.float64_t, ndim=1] lams, double q, double abs_tol, int iter_max):
+        np.ndarray[dtype=np.float64_t, ndim=1] lams, double abs_tol, int iter_max):
     """
     lams must be in the increasing order.
     """
@@ -106,9 +106,9 @@ def lasso_vec_cd(
     
     cdef np.ndarray[dtype=np.float64_t, ndim=2] Beta = np.zeros((p, k), dtype=np.float64)
 
-    Beta[:, k-1] =  _classo_cd(XTX, XTy, X_norm2_inv, np.zeros(p, dtype=np.float64), lams[k-1], q, abs_tol, iter_max)
+    Beta[:, k-1] =  _classo_cd(XTX, XTy, X_norm2_inv, np.zeros(p, dtype=np.float64), lams[k-1], abs_tol, iter_max)
     for i in range(k - 2, -1, -1):
-        Beta[:, i] = _classo_cd(XTX, XTy, X_norm2_inv, Beta[:, i+1], lams[i], q, abs_tol, iter_max)
+        Beta[:, i] = _classo_cd(XTX, XTy, X_norm2_inv, Beta[:, i+1], lams[i], abs_tol, iter_max)
     
     return Beta
 
